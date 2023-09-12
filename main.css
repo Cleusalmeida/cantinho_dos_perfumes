@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    max-width: 1024px; /*largura máxima*/
+    width: 100%;
+    margin: 0 auto; /*centralizar na horizontal*/
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*centralizar na vertical*/
+}
+
+header {
+    padding: 16px 0 0;
+    border-bottom: 1px solid #9c9797;
+    margin-bottom: 56px; /*espaço entre a linha do cabeçalho e o começo do body*/
+    background-color: cadetblue;
+    color: #fff;
+}
+
+.menu > li {
+    float: left ; /*faz os elementos do menu ficarem um ao lado do outro*/
+    list-style: none; /*tira o pontinho que significa linha*/
+    padding: 16px; /*espaço entre os elementos do menu em todas as partes*/
+    border-top: 4px solid transparent; /*borda emcima dos elementos do menu (pode ser transparente também*/
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    border-color: blueviolet; /*cor da borda do menu selecionado*/
+}
+
+.conteudo {
+    display: grid; /*trabalhando com colunas e linhas*/
+    grid-template-columns: 80% 20%; /*organiza em colunas e diz a largura das colunas*/
+}
+
+.nome-do-produto img {
+    max-width: 100%; /*tamanho da imagem dos produtos*/
+}
+
+.sobre-a-loja {
+    margin-bottom: 56px; /*espaço entre a seçao: últimas notícias e a imagem acima*/
+}
+
+.sobre-a-loja .descritivo-da-loja a {
+    display: flex; /*colocou a descriçao da imagem ao lado da imagem*/
+    font-size: 1.7em; /*tamanho da fonte do parágrafo da descriçao*/
+    text-decoration: none;
+}
+
+.sobre-a-loja .descritivo-da-loja img {
+    margin-right: 8px; /*espaço à direita, entre a imagem e o parágrafo de descrição*/
+    width: 300px;
+    height: 300px;
+}
+
+.sobre-a-loja .descritivo-da-loja h3 {
+    font-size: 28px;
+    font-style: italic;
+}
+
+section h2 {
+    margin-bottom: 32px;
+}
+
+.produtos {
+    display: grid; /*colunas ou linhas*/
+    grid-template-columns: repeat(4, 25%); /*pode escrever também: repeat (3,32,6%)*/
+    column-gap: 1%; /*espaço entre as colunas de imagens*/
+    row-gap: 5%; /*espaço entre o topo das iamgens e o parágrafo*/
+    font-size: 18px;
+}
+
+button {
+    background-color: green;
+    border-radius: 8px; /*borda arredondada do botão*/
+    color: #fff; /*cor do texto*/
+    padding: 10px 5px;
+    margin-top: 10px; /*distância entre o botão e as dscrições*/
+}
+
+@media screen and (max-width: 767px) {
+    .conteudo{
+        display: block;
+        width: 80%;
+    }
+
+    body {
+        width: 90% auto;
+    }
+
+    .menu li {
+        margin: 0;
+        display: block;
+        font-weight: bold;
+    }
+
+    .container h1 {
+        font-size: 28px;
+        padding-bottom: 10px;
+    }
+    
+    .sobre-a-loja .descritivo-da-loja a{
+        display: block;
+        font-size: 1.5em;
+    }
+
+    .sobre-a-loja .descritivo-da-loja img {
+        margin-right: 0px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .sobre-a-loja .descritivo-da-loja h3 {
+        font-size: 22px;
+        font-style: italic;
+    }
+
+    .produtos {
+        display: block;
+    }
+
+    .nome-do-produto a img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .produtos .nome-do-produto {
+        margin-bottom: 32px;
+    }
+
+    header div.container {
+        flex-direction: column; 
+    }
+
+    .menu {
+        display: inline;
+    }
+
+    .menu .menu > li { 
+        display: block;
+    }
+
+    .menu > li { 
+        clear: both;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+    }
+    
+    .sobre-a-loja .descritivo-da-loja a {
+        font-size: 1.5em;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, 49%);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .botao-menu {
+        display: none;
+    }
+}
+
+
+
